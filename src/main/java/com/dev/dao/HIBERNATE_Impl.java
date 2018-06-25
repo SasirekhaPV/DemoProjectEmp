@@ -23,7 +23,7 @@ public class HIBERNATE_Impl implements EmpInfoDAO{
 	@Override
 	public Employee login(String user_id, String password)
 	{
-		Session session=factory.openSession();
+		/*Session session=factory.openSession();
 		User_Master us=new User_Master();
 		Employee emp = new Employee();
 
@@ -37,7 +37,48 @@ public class HIBERNATE_Impl implements EmpInfoDAO{
         
         List<Employee> list = q.list();
          return list.get(0);   
- 				
+ 				*/
+		
+		
+	//	Employee emp = null;
+		Session session = factory.openSession();
+		session.beginTransaction();
+		
+//		String query="select emp from Employee emp "
+//				+ "where emp.emp_ID=user.userId and user.userId= :userId and user.userPassword= :password";
+
+		String query = "select emp from Employee as emp, User_Master"
+				+ " as us where emp.emp_ID=us.user_id and us.user_id=:user_id and us.userPassword=:password";
+
+//		Query<Employee> q = session.createQuery(query);
+//		q.setParameter("userId", UserId);
+//		q.setParameter("password", UserPassword);
+//
+//		List<Employee> emp = q.list();
+//		return emp.get(0);
+
+		//emp = (Employee) q.uniqueResult();
+		
+		Query q=session.createQuery(query);
+		 q.setParameter("user_id",user_id);
+	     q.setParameter("password",password);
+		Employee emp = (Employee) q.uniqueResult();
+		return emp;
+
+		// session = factory.openSession();
+		// Employee emp=new Employee();
+		// User_Master us=new User_Master();
+		//
+		// session.getTransaction().begin();
+		// if (UserId.equals(us.getUserId())&&
+		// UserPassword.equals(us.getUserPassword())) {
+		// session.getTransaction().commit();
+		// return emp;
+		//
+		// } else {
+		// session.getTransaction().commit();
+		// return emp;
+		// }
 		
 	
 	}

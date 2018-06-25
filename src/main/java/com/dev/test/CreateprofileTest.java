@@ -17,8 +17,8 @@ public class CreateprofileTest
 		com.dev.dto.Employee emp = new com.dev.dto.Employee();
 		Date d = new Date();
 		//for employee table
-		emp.setEmp_ID("100011");
-		emp.setEmp_First_Name("suyash"); 
+		emp.setEmp_ID("100016");
+		emp.setEmp_First_Name("deepak"); 
 		emp.setEmp_Last_Name ("jain"); 
 		emp.setEmp_Dept_ID (11);
 		emp.setEmp_Date_of_Birth(d);
@@ -33,8 +33,8 @@ public class CreateprofileTest
 
 		//for user_master table
 		com.dev.dto.User_Master us = new com.dev.dto.User_Master();
-		us.setUser_id("100011");
-		us.setUserName("suyash");
+		us.setUser_id("100016");
+		us.setUserName("deepak");
 		us.setUserPassword("qwert");
 		us.setUserType("emp");
 		
