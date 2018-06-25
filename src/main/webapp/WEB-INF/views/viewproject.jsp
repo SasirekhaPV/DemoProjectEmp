@@ -26,6 +26,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 </head>
 <body>
+
+<% int num = Integer.parseInt(request.getParameter("page")); %>
+
 <div class=" table ">
     <h1 class="well">Employee Details</h1>
     <div class="col-lg-12 well">
@@ -70,8 +73,8 @@
         </table>
         </div>
         <div>
-            <a href="#" class="previous">&laquo; Previous</a>
-            <a href="#" class="next">Next &raquo;</a>
+            <a href="./DisplayAll?page=<%=num-1%>" class="previous">&laquo; Previous</a>
+            <a href="./DisplayAll?page=<%=num+1%>" class="next">Next &raquo;</a>
         </div>
     </div>
 </div>
