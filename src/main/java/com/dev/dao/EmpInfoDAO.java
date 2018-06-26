@@ -12,7 +12,7 @@ public interface EmpInfoDAO {
 	
 	public boolean createProfile(Employee emp);
 	
-	public  void updateEmp(String Emp_Id);
+	public  boolean updateEmp(Employee emp);
 	
 	public List<Employee> empDetails( int PageNumber);
 }

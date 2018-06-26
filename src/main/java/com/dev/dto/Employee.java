@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="employee")
@@ -23,9 +25,10 @@ public class Employee {
 	@Column(name="Emp_last_name")
 	String  emp_Last_Name ;   
 	
+	@Temporal(TemporalType.DATE)
 	@Column(name="Emp_Date_of_Birth")
 	Date    emp_Date_of_Birth ;
-	
+	@Temporal(TemporalType.DATE)
 	@Column(name="Emp_Date_of_Joining")
 	Date    emp_Date_of_Joining;
 	

@@ -19,18 +19,16 @@ public class JDBCImpl implements EmpInfoDAO {
 	}
 
 	@Override
-	public boolean createProfile(Employee Emp) {
+	public boolean createProfile(Employee emp) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public void updateEmp(String Emp_Id) {
+	public boolean updateEmp(Employee emp) {
 		// TODO Auto-generated method stub
-		
+		return false;
 	}
-
-	
 
 	@Override
 	public List<Employee> empDetails(int PageNumber) {

@@ -20,7 +20,7 @@
                 <label><b>Search Employee</b></label>
             </div>
         <div>
-                <input type="text" class="form-control"  name="Emp_ID" />
+                <input type="text" class="form-control"  name="emp_ID" />
             <input type="submit" class="btn btn-lg btn-info " > Search</input>
             </div>
 

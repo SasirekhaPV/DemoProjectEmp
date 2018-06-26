@@ -95,17 +95,26 @@ public class HIBERNATE_Impl implements EmpInfoDAO{
 	
 
 	@Override
-	public void updateEmp(String Emp_Id) {
-
+	public boolean updateEmp(Employee emp) {
 		Session session=factory.openSession();
+
+
+
 		session.getTransaction().begin();
-		Employee emp=session.get(Employee.class,Emp_Id);
-		emp.setEmp_ID("67");
+
+		//Employee emp=session.get(Employee.class,"5");
+
+		//emp.setEmp_ID("5");
+
+		session.merge(emp);
 		 session.getTransaction().commit();
-		 session.close();
-		 System.out.println("update");
+
+		// session.close();
+
+		 return true;
 		
-	}
+		
+}
 
 	@Override
 	public List<Employee> empDetails( int pageNumber) {
