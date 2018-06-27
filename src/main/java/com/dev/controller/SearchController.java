@@ -28,7 +28,7 @@ public class SearchController
 		Employee emp1 = em.searchEmp(emp.getEmp_ID());
 		model.addAttribute("emp1", emp1);
 		System.out.println(emp1);
-		return "getsearchresult";
+		return "EmployeeSearch";
 		
 	
 		

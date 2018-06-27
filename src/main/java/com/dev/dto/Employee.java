@@ -19,10 +19,10 @@ public class Employee {
 	@Id
 	String  emp_ID; 
 	
-	@Column(name="Emp_first_name")
+	@Column(name="Emp_First_Name")
 	String  emp_First_Name ;
 
-	@Column(name="Emp_last_name")
+	@Column(name="Emp_Last_Name")
 	String  emp_Last_Name ;   
 	
 	@Temporal(TemporalType.DATE)

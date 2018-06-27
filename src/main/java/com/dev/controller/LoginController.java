@@ -14,7 +14,7 @@ import com.dev.dto.Employee;
 import com.dev.factory.EmpInfoDAOFactory;
 
 @Controller
-@RequestMapping("/controller")
+@RequestMapping("/search")
 public class LoginController {
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -35,8 +35,10 @@ public class LoginController {
 		String msg = null;
 		if (emp != null) {
 			msg = "login success";
+			return new ModelAndView("Header", "msg", msg);
 		} else {
 			msg = "login failed";
+			return new ModelAndView("AdminLogin", "msg", msg );
 		}
-		return new ModelAndView("Msg", "msg", msg);
+		
 }}

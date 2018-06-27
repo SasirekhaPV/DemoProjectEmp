@@ -5,18 +5,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="user_master")
+@Table(name="User_Master")
 public class User_Master {
-	@Column(name="user_id")
+	@Column(name="UserId")
 	@Id
 	String user_id;
-	@Column(name="name")
+	@Column(name="UserName")
 	String userName;
 	
-	@Column(name="password")
+	@Column(name="UserPassword")
 	String userPassword;
 	
-	@Column(name="usertype")
+	@Column(name="UserType")
 	String userType;
 	
 
