@@ -21,7 +21,7 @@ import com.dev.factory.EmpInfoDAOFactory;
 
 
 @Controller
-@RequestMapping("/UpdateController")
+@RequestMapping("/search")
 public class UpdateController {
 	EmpInfoDAO db = EmpInfoDAOFactory.getDatabase();
 	

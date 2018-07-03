@@ -60,7 +60,7 @@ public class Employee {
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="Emp_ID", 
-		referencedColumnName="userId")
+		referencedColumnName="UserId")
 
 	private User_Master user;
 	

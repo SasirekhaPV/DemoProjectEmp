@@ -14,7 +14,7 @@ import com.dev.dao.HIBERNATE_Impl;
 import com.dev.dto.Employee;
 
 @Controller
-@RequestMapping("/get")
+@RequestMapping("/search")
 public class AllDetailsEmployee {
 
 	@RequestMapping(value="/DisplayAll", method= RequestMethod.GET)

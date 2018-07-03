@@ -44,51 +44,36 @@ margin-left:30%;
 		<div class="container-fluid ">
 			<nav
 				class="navbar navbar-expand-lg navbar-expand-lg  fixed-top bg-dark">
-				<a id="para1">Employee</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<form class="form-inline my-2 my-md-0 " action="./searchReturn"
-					method="POST">
+				<%String emp_First_Name=request.getParameter("emp_First_Name"); %>
+				<a id="para1"><%=emp_First_Name%></a>
+				
+			
 					<div class="collapse navbar-collapse">
 						<ul class="navbar-nav mr-auto">
 
 								<li class="nav-item active" align="right"><a
 								class="nav-link" href="./logout">Logout</a>
-								</li> &nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;
-							&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;
-							&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;
-							&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;
-							&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;
-							&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;
-							&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;
-							&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-							&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp; &nbsp;&nbsp;&emsp;
-
-							&nbsp;&nbsp;&emsp;&emsp;
-							<input class="form-control mr-sm-2" type="text" name="emp_ID"
-								placeholder="Search by emp id" aria-label="Search">
-							<button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+								</li>
+							
 
 							
 
 						</ul>
 					</div>
-				</form>
+			
 
 			</nav>
 
 		</div>
 	</header>
+	<%
+					Employee emp = (Employee) request.getAttribute("emp1");
+				%>
+	<form action="./AdminPage?emp_ID=<%=emp.getEmp_ID()%>" method="post">
 	<div id="about" class="container-fluid jumbotron">
 		<div class="row">
 			<div class="col-sm-12">
-				<%
-					Employee emp = (Employee) request.getAttribute("emp1");
-				%>
+				
 				<table class="table table-condensed" border="2">
 
 					<tr>
@@ -138,11 +123,13 @@ margin-left:30%;
 
 					</tr>
 				</table>
+				<button type="submit" class="btn btn-outline-success my-2 my-sm-0">EDIT</button>
 
 			</div>
 
 		</div>
 	</div>
+	</form>
 
 	<footer>
     <p><marquee>© 2018 Xforce, All rights reserved 2018.</marquee></p>

@@ -140,6 +140,8 @@ public class HIBERNATE_Impl implements EmpInfoDAO{
 		return list;
 		
 	}
+	
+	
 
 	@Override
 	public boolean createProfile(Employee emp) {

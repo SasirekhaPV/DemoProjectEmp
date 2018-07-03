@@ -31,12 +31,28 @@ public class LoginController {
 		EmpInfoDAO emp1 = EmpInfoDAOFactory.getDatabase();
 		Employee emp = new Employee();
 		emp = emp1.login(empId, password);
+		
 		System.out.println(emp);
 		String msg = null;
 		if (emp != null) {
+			String type = emp.getUser().getUserType();
+			if(type.equalsIgnoreCase("Admin"))
+			{
 			msg = "login success";
-			return new ModelAndView("Header", "msg", msg);
-		} else {
+			return new ModelAndView("adminHeader", "msg", msg).addObject("emp",emp);
+					
+			}
+			else if(type.equalsIgnoreCase("Employee"))
+			{
+				msg = "login Success";
+			return new ModelAndView("EmployeeHeader", "msg", msg).addObject("emp", emp);
+			}
+			else {
+				return new ModelAndView("AdminLogin");
+			}
+		    }
+		    
+	   else {
 			msg = "login failed";
 			return new ModelAndView("AdminLogin", "msg", msg );
 		}

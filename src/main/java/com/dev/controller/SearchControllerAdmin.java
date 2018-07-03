@@ -14,15 +14,15 @@ import com.dev.dto.Employee;
 
 @Controller
 @RequestMapping("/search")
-public class SearchController 
-{
-	@RequestMapping(value="/searchForm", method= RequestMethod.GET)
+public class SearchControllerAdmin {
+
+	/*@RequestMapping(value="/searchForm", method= RequestMethod.GET)
 	public String  getSearchForm()
 	{
 		return "Search";
-	}
+	}*/
 	
-	@RequestMapping(value="/searchReturn", method=RequestMethod.POST)
+	@RequestMapping(value="/searchReturnAdmin", method=RequestMethod.POST)
 	public String searchReturn(Employee emp, Model model,HttpServletRequest req)
 	{
 		//Employee emp = new Employee();
@@ -34,7 +34,7 @@ public class SearchController
 			Employee emp1 = em.searchEmp(emp.getEmp_ID()); 
 			model.addAttribute("emp1", emp1);
 			System.out.println(emp1);
-			return "EmployeeSearch";
+			return "AdminEdit";
 			 
 		}
 		else
@@ -47,4 +47,5 @@ public class SearchController
 		
 	}
 
+	
 }

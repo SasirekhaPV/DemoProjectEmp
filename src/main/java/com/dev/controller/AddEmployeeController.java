@@ -22,7 +22,7 @@ import com.dev.dto.User_Master;
 import com.dev.factory.EmpInfoDAOFactory;
 
 @Controller
-@RequestMapping("/AddEmp")
+@RequestMapping("/search")
 public class AddEmployeeController {
 	EmpInfoDAO db = EmpInfoDAOFactory.getDatabase();
 	@RequestMapping(value="/Page",method=RequestMethod.GET)
@@ -41,7 +41,7 @@ public class AddEmployeeController {
 	}
 
 
-	@RequestMapping(value="/submit",method=RequestMethod.POST)
+	@RequestMapping(value="/add",method=RequestMethod.POST)
 	public ModelAndView submitEmpDetails(Employee emp,@RequestParam("userType") String userType,@RequestParam("userPassword") String userPassword){
 		User_Master u=new User_Master();
 		u.setUser_id(emp.getEmp_ID());
