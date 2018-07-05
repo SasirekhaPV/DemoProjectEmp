@@ -48,33 +48,13 @@ footer p {
 	crossorigin="anonymous">
 
 </head>
-<body>
-	<header class="top-bar js-top-bar _fixed _scrolling">
-		<div class="container-fluid ">
-			<nav
-				class="navbar navbar-expand-lg navbar-expand-lg  fixed-top bg-dark">
-				<a id="para1">ADMIN</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item active"><a class="nav-link top"
-							href="./logout">Logout</a></li>
-
-					</ul>
-				</div>
-			</nav>
-		</div>
-	</header>
+<body class="container-fluid jumbotron">
+	<jsp:include page="/WEB-INF/views/MainAdminHeader.jsp" />
 
 
 
 
-	<div class="container-fluid jumbotron">
+	<div >
 
 		<form method="post" action="./add">
 	
@@ -163,7 +143,8 @@ footer p {
 							<option name="Emp_Marital_Status" value="married">Married</option>
 							<option name="Emp_Marital_Status" value="divorced">Divorced</option>
 							<option name="Emp_Marital_Status" value="separated">Separated</option>
-							<option name="Emp_Marital_Status" value="widowd">Widowed</option>
+							<option name="Emp_Marital_Status" value="widowed">Widowed</option>
+							<option name="Emp_Marital_Status" value="FriendZone">FriendZone</option>
 
 						</select>
 					</div>

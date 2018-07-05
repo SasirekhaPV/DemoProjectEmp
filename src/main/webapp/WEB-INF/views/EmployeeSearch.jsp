@@ -31,6 +31,8 @@ margin-left:30%;
    
     color:white;
 }
+.down{
+margin-top:5%;
 
 </style>
 
@@ -39,57 +41,18 @@ margin-left:30%;
 	integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
 	crossorigin="anonymous">
 </head>
-<body>
-	<header class="top-bar js-top-bar _fixed _scrolling">
-		<div class="container-fluid ">
-			<nav
-				class="navbar navbar-expand-lg navbar-expand-lg  fixed-top bg-dark">
-				<a id="para1">Employee</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<form class="form-inline my-2 my-md-0 " action="./searchReturn"
-					method="POST">
-					<div class="collapse navbar-collapse">
-						<ul class="navbar-nav mr-auto">
-
-								<li class="nav-item active" align="right"><a
-								class="nav-link" href="./logout">Logout</a>
-								</li> &nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;
-							&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;
-							&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;
-							&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;
-							&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;
-							&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;
-							&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;
-							&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-							&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp; &nbsp;&nbsp;&emsp;
-
-							&nbsp;&nbsp;&emsp;&emsp;
-							<input class="form-control mr-sm-2" type="text" name="emp_ID"
-								placeholder="Search by emp id" aria-label="Search">
-							<button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
-
-							
-
-						</ul>
-					</div>
-				</form>
-
-			</nav>
-
-		</div>
-	</header>
-	<div id="about" class="container-fluid jumbotron">
+<body class="container-fluid jumbotron">
+	<jsp:include page="/WEB-INF/views/empheader.jsp" />
+		<div >
 		<div class="row">
 			<div class="col-sm-12">
 				<%
 					Employee emp = (Employee) request.getAttribute("emp1");
 				%>
-				<table class="table table-condensed" border="2">
+				<div>
+				<h1><b>Employee name:</b> &nbsp;<%=session.getAttribute("emp_First_Name") %></h1>
+				</div>
+				<table class="table table-condensed down" border="2">
 
 					<tr>
 						<b>

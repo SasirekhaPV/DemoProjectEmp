@@ -42,11 +42,13 @@ margin-left:30%;
 	crossorigin="anonymous">
 </head>
 <body>
+	
+	
 	<header class="top-bar js-top-bar _fixed _scrolling">
 		<div class="container-fluid ">
 			<nav
 				class="navbar navbar-expand-lg navbar-expand-lg  fixed-top bg-dark">
-				<a id="para1">${emp.getEmp_First_Name()}</a>
+				<a id="para1">${emp.getEmp_First_Name().toUpperCase()}</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#navbarSupportedContent"
 					aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -58,12 +60,15 @@ margin-left:30%;
 					<div class="collapse navbar-collapse">
 						<ul class="navbar-nav mr-auto">
 
+ &nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;
 
 
-							<li class="nav-item active" align="right"><a
-								class="nav-link" href="./logout">Logout</a>
+							
 								
-								</li>
+							<input class="form-control mr-sm-2" type="text" name="emp_ID"
+								placeholder="Search by emp id" aria-label="Search">
+						<button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+						
 								 &nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;  
             &nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;  
             &nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;  
@@ -74,11 +79,11 @@ margin-left:30%;
 								 &nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;  
             &nbsp;&nbsp;&emsp;
 						
-            &nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 
+            &nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp; &emsp;&emsp;&emsp; 
+						<li class="nav-item active" align="right"><a
+								class="nav-link" href="./logout">Logout</a>
 								
-							<input class="form-control mr-sm-2" type="text" name="emp_ID"
-								placeholder="Search by emp id" aria-label="Search">
-						<button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+								</li>
 								
 
 						</ul>
@@ -98,6 +103,9 @@ margin-left:30%;
 		</div>
 	</header>
 
+	
+	
+	
 	<div class="container-fluid jumbotron">
 		<div class="row">
 			<div class="col-sm-12">
@@ -110,6 +118,9 @@ margin-left:30%;
   <tr>
 	<td>First Name</td>
 	<td>${emp.getEmp_First_Name()}</td>
+	<%Employee em=(Employee)request.getAttribute("emp"); %>
+						<%session.setAttribute("emp_First_Name",em.getEmp_First_Name().toUpperCase()); %>
+	
   </tr>
   <tr>
 	<td>Last name</td>

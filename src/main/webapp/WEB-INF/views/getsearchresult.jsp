@@ -10,7 +10,7 @@
 		<%
 			Employee emp = (Employee) request.getAttribute("emp1");
 		%>
-		<table border="1">
+		<table  border="1">
 			<legend>Personalia:</legend>
 			<tr>
 				<b>

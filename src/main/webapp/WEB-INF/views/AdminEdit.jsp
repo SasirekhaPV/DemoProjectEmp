@@ -31,46 +31,25 @@ margin-left:30%;
    
     color:white;
 }
+.left{
+margin-left:50%;
+}
 
 </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
 	crossorigin="anonymous">
 </head>
-<body>
-	<header class="top-bar js-top-bar _fixed _scrolling">
-		<div class="container-fluid ">
-			<nav
-				class="navbar navbar-expand-lg navbar-expand-lg  fixed-top bg-dark">
-				<%String emp_First_Name=request.getParameter("emp_First_Name"); %>
-				<a id="para1"><%=emp_First_Name%></a>
-				
-			
-					<div class="collapse navbar-collapse">
-						<ul class="navbar-nav mr-auto">
-
-								<li class="nav-item active" align="right"><a
-								class="nav-link" href="./logout">Logout</a>
-								</li>
-							
-
-							
-
-						</ul>
-					</div>
-			
-
-			</nav>
-
-		</div>
-	</header>
+<body class="container-fluid jumbotron">
+	<jsp:include page="/WEB-INF/views/MainAdminHeader.jsp" />
 	<%
 					Employee emp = (Employee) request.getAttribute("emp1");
 				%>
 	<form action="./AdminPage?emp_ID=<%=emp.getEmp_ID()%>" method="post">
-	<div id="about" class="container-fluid jumbotron">
+	<div id="about" >
 		<div class="row">
 			<div class="col-sm-12">
 				
@@ -123,7 +102,7 @@ margin-left:30%;
 
 					</tr>
 				</table>
-				<button type="submit" class="btn btn-outline-success my-2 my-sm-0">EDIT</button>
+				<button type="submit" class="btn btn-outline-success my-2 my-sm-0 left">EDIT</button>
 
 			</div>
 

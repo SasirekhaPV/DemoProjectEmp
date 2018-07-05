@@ -119,7 +119,7 @@ public class HIBERNATE_Impl implements EmpInfoDAO{
 	@Override
 	public List<Employee> empDetails( int pageNumber) {
 		
-		int pageSize = 10;
+		int pageSize = 5;
 		Session session=factory.openSession();
 
 		session.getTransaction().begin();

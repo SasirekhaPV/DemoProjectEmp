@@ -48,30 +48,11 @@ footer p {
     </style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 </head>
-<body>
-
-<header  class="top-bar js-top-bar _fixed _scrolling">
-    <div>
-        <nav class="navbar navbar-expand-lg navbar-expand-lg  fixed-top bg-dark" >
-            <a id="para1" >ADMIN</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse">
-            		<ul class="navbar-nav mr-auto">
-						 <li class="nav-item active">
-                        							<a class="nav-link" href="./logout">Logout</a>
-                   						 </li>
-                   						 
-                   						 </ul>
-                   						 </div>
-                   						 </nav>
-                   						 </div>
-                   						 </header>
-
+<body class=" container-fluid jumbotron">
+<jsp:include page="/WEB-INF/views/MainAdminHeader.jsp" />
 <% int num = Integer.parseInt(request.getParameter("page")); %>
 
-<div class=" table container-fluid jumbotron">
+<div class=" table">
 <div class="row">
 <div class="col-sm-12">
     <h1 class="well" ><B>Employee Details</B></h1>
